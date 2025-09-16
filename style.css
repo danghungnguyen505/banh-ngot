@@ -1,0 +1,300 @@
+/* --- Cài đặt chung & Reset --- */
+:root {
+    --primary-font: 'Lato', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+    --background-color: #FBF8F1;
+    --text-color: #3d3d3d;
+    --primary-green: #89943B;
+    --price-bg: #D4DE8C;
+    --button-bg: #5A463B;
+    --form-title-color: #E9D320;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+/* --- Banner chính --- */
+.hero-banner {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero-banner h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-green);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-banner h2 {
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.separator-icon {
+    margin-top: 20px;
+    height: 30px;
+}
+
+/* --- Lưới sản phẩm (3 cột) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.product-code {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    background-color: var(--price-bg);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.add-to-cart-btn {
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #43322a;
+}
+
+/* --- Khu vực Liên hệ --- */
+.order-form-section {
+    padding: 80px 0;
+    background-image: url('images/background-form.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.order-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contact-wrapper {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-wrapper h2 {
+    font-family: var(--heading-font);
+    color: var(--form-title-color);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.contact-wrapper p {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.contact-btn i {
+    margin-right: 12px;
+    font-size: 1.6rem;
+    width: 30px;
+}
+
+.contact-btn.facebook {
+    background-color: #0084FF;
+}
+
+.contact-btn.zalo {
+    background-color: #0068FF;
+}
+
+.contact-btn.phone {
+    background-color: #25D366;
+}
+
+/* --- Các nút cố định --- */
+.floating-phone-btn,
+.scroll-to-top-btn {
+    position: fixed;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.floating-phone-btn {
+    bottom: 30px;
+    left: 30px;
+    background-color: #007bff;
+}
+
+.scroll-to-top-btn {
+    bottom: 30px;
+    right: 30px;
+    background-color: #5A463B;
+}
+
+.floating-phone-btn:hover,
+.scroll-to-top-btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- Responsive (cho thiết bị di động) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner h1 {
+        font-size: 2.2rem;
+    }
+    .hero-banner h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .floating-phone-btn,
+    .scroll-to-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+    }
+    .floating-phone-btn {
+        left: 20px;
+    }
+    .scroll-to-top-btn {
+        right: 20px;
+    }
+}
